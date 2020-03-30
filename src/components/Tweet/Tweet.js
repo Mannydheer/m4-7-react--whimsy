@@ -12,6 +12,12 @@ const propTypes = {
   username: PropTypes.string.isRequired,
   avatarSrc: PropTypes.string.isRequired,
   tweetContents: PropTypes.string.isRequired,
+  timestamp: PropTypes.string.isRequired,
+  // numOfLikes: propTypes.number.isRequired,
+  // numOfRetweets: propTypes.number.isRequired,
+
+
+  // make sure add it. for number 1.
 };
 
 const Tweet = ({
@@ -26,18 +32,37 @@ const Tweet = ({
   isRetweetedByCurrentUser,
   handleToggleLike,
   handleToggleRetweet,
+
 }) => {
+
+  console.log(isRetweetedByCurrentUser)
+
+  const getDate = timestamp.toString();
+  let date = getDate.split(' ').slice(0, 5).join(' ');
+
+
+
+
   return (
     <Wrapper>
       <Header>
         <Avatar src={avatarSrc} />
+
         <Name>
           <DisplayName>{displayName}</DisplayName>
+          <div>{date}</div>
+
+
           <Username>@{username}</Username>
         </Name>
       </Header>
 
       <TweetContents>{tweetContents}</TweetContents>
+      <Stats>
+        <div><strong>Retweets: </strong> {numOfRetweets} </div>
+        <div><strong>Likes: </strong> {numOfLikes} </div>
+      </Stats>
+
 
       <Divider />
 
@@ -66,7 +91,6 @@ const Tweet = ({
         <Action color="rgb(224, 36, 94)" size={40} onClick={handleToggleLike}>
           <LikeButton isLiked={isLikedByCurrentUser} />
         </Action>
-
         <Action
           color="rgb(27, 149, 224)"
           size={40}

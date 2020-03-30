@@ -19,6 +19,8 @@ How would you solve this?
 Part of CSS, not React:
 
 ```css
+// creating key frame and calling it fadeIn, go from something to something.  Then call this fadein
+//on animation....and give it fadeIn of 500ms. 
 @keyframes fadeIn {
   from {
     opacity: 0;

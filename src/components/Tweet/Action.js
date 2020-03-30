@@ -35,6 +35,7 @@ const Wrapper = styled(UnstyledButton)`
     bottom: 0;
     border-radius: 50%;
     opacity: 0;
+    
     background-color: ${p => p.circleColor};
   }
 

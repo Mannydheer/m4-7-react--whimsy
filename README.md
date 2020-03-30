@@ -217,7 +217,6 @@ const scale = keyframes`
     some-property: 1;
   }
 `;
-
 const fade = keyframes`
   from {
     some-other-property: hi;
@@ -507,7 +506,7 @@ To accomplish this, we'll need to take advantage of the [prefers-reduced-motion 
 const Wrapper = styled.div`
   @media (prefers-reduced-motion: no-preference) {
     animation: ${yourThing} 500ms;
-  }
+  }j
 `;
 ```
 
