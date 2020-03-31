@@ -271,7 +271,11 @@ The <SpringDemo />
 
 ### How to use
 
+
 ```js
+//add as dependecy.
+//use spring hook. and animated importaed.
+//add animated to the element that will use usesr=pring
 import { useSpring, animated } from 'react-spring';
 
 const Demo = () => {
@@ -283,6 +287,8 @@ const Demo = () => {
 
   return <animated.button style={style} onClick={() => setToggled(!toggled)} />;
 };
+
+//
 ```
 
 ---
@@ -328,6 +334,7 @@ const Demo = () => {
 
   const style = useSpring({
     transform: toggled ? 'translateY(200px)' : 'translateY(0px)',
+    //passing it config object.
     config: {
       tension: 200,
       friction: 1,
