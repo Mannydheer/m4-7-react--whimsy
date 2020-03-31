@@ -9,6 +9,16 @@ import styled from 'styled-components';
 //   });
 
 const ScaleIn = ({ children }) => {
+
+
+    const query = '(prefers-reduced-motion: reduce)';
+
+    const mediaQueryList = window.matchMedia(query);
+
+    const shouldReduceMotion = mediaQueryList.matches;
+
+
+
     const style = useSpring({
         transform: "scale(1)",
         from: {
@@ -18,6 +28,7 @@ const ScaleIn = ({ children }) => {
             tension: 200,
             friction: 15,
         },
+        immediate: shouldReduceMotion,
     });
     return (
         <StyledScale style={style}>

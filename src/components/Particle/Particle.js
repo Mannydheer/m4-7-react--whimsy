@@ -34,12 +34,12 @@ to {
     transform: scale(0.1);
     opacity: 0;
 }
-
-
 `
 
 const StyledCircle = styled.div`
 position: absolute;
-color: ${props => props.color};
-animation: ${props => PushCircles(props)} 800ms forwards;
+
+@media (prefers-reduced-motion: no-preference) {
+    animation: ${props => PushCircles(props)} 800ms forwards;
+  }
 `

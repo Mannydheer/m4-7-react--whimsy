@@ -22,14 +22,15 @@ const Poppin = keyframes`
   to {
     color: blue;
     opacity: 0;
-    transform: scale(1);
+    transform: scale(3);
   }
 `;
 const Wrapper = styled.div`
-  animation: ${Poppin} 500ms forwards;
   border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
+  
+  @media (prefers-reduced-motion: no-preference) {
+    animation: ${Poppin} 500ms forwards;
+  }
   
 `;
